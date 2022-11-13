@@ -14,9 +14,7 @@ import {
   ThemeProvider,
 } from "@material-ui/core";
 import colorTheme from "./styles/colorTheme";
-import ApolloClient from "./backend/client/ApolloClient";
 import MoneyButtons from "./components/MoneyButtons";
-import { getUserIdByName, getMoneyByUserId } from "./backend/gql/queries";
 import { useQuery, ApolloProvider } from "@apollo/client";
 
 /* I will build out the get user REACT COMPONENT and maybe transfer it to a seperate file 
@@ -64,28 +62,26 @@ function App() {
 
   return (
     <div className="App">
-      <ApolloProvider client={ApolloClient}>
-        <header className="App-header">
-          <ThemeProvider theme={colorTheme}>
-            <TextField
-              style={{
-                backgroundColor: "#F7D8B5",
-                border: "30px solid #FFF",
-                textAlign: "center",
-                margin: "20px",
-              }}
-              id="outlined-name"
-              label="Enter Name"
-              variant="outlined"
-              onChange={handleTextChange}
-              onKeyDown={handleKeyDown}
-            />
-          </ThemeProvider>
-          <text style={{ verticalAlign: "top" }}>input user</text>
-          <MoneyText amount={amount} />
-          <MoneyButtons deposit={deposit} withdraw={withdraw}></MoneyButtons>
-        </header>
-      </ApolloProvider>
+      <header className="App-header">
+        <ThemeProvider theme={colorTheme}>
+          <TextField
+            style={{
+              backgroundColor: "#F7D8B5",
+              border: "30px solid #FFF",
+              textAlign: "center",
+              margin: "20px",
+            }}
+            id="outlined-name"
+            label="Enter Name"
+            variant="outlined"
+            onChange={handleTextChange}
+            onKeyDown={handleKeyDown}
+          />
+        </ThemeProvider>
+        <text style={{ verticalAlign: "top" }}>input user</text>
+        <MoneyText amount={amount} />
+        <MoneyButtons deposit={deposit} withdraw={withdraw}></MoneyButtons>
+      </header>
     </div>
   );
 }

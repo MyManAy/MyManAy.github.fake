@@ -1,0 +1,11 @@
+query getUserIdByName($name: String!) {
+  User(where: { name: { _eq: $name } }) {
+    id
+  }
+}
+
+query getMoneyByUserId($id: uuid!) {
+  Money(where: { userId: { _eq: $id } }) {
+    amount
+  }
+}
