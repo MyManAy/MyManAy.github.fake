@@ -5,9 +5,10 @@ import colorTheme from "../styles/colorTheme";
 export interface IAppProps {
   deposit: () => void;
   withdraw: () => void;
+  update: () => void;
 }
 
-export default function App({ deposit, withdraw }: IAppProps) {
+export default function App({ deposit, withdraw, update }: IAppProps) {
   return (
     <div>
       <ThemeProvider theme={colorTheme}>
@@ -23,6 +24,10 @@ export default function App({ deposit, withdraw }: IAppProps) {
 
           <Button style={{ color: "red" }} onClick={withdraw}>
             <text style={{ fontWeight: "bolder" }}>Withdraw</text>
+          </Button>
+
+          <Button style={{ color: "blue" }} onClick={update}>
+            <text style={{ fontWeight: "bolder" }}>Update</text>
           </Button>
         </ButtonGroup>
       </ThemeProvider>

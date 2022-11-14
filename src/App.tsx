@@ -72,7 +72,11 @@ function App() {
         </div>
         <text style={{ verticalAlign: "top" }}>input user</text>
         <MoneyText amount={amount} />
-        <MoneyButtons deposit={deposit} withdraw={withdraw}></MoneyButtons>
+        <MoneyButtons
+          deposit={deposit}
+          withdraw={withdraw}
+          update={update}
+        ></MoneyButtons>
       </header>
     </div>
   );
