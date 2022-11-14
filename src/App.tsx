@@ -7,13 +7,7 @@ import React, {
 import logo from "./logo.svg";
 import "./App.css";
 import MoneyText from "./components/MoneyText";
-import {
-  Button,
-  ButtonGroup,
-  TextField,
-  ThemeProvider,
-} from "@material-ui/core";
-import colorTheme from "./styles/colorTheme";
+import { CircularProgress } from "@material-ui/core";
 import MoneyButtons from "./components/MoneyButtons";
 import { useQuery, ApolloProvider } from "@apollo/client";
 
@@ -27,14 +21,13 @@ function App() {
     null as ReturnType<typeof setTimeout> | null
   );
   const [timeoutAlive, setTimeoutAlive] = useState(false);
+  const [waitingForQueryRes, setWaitingForQueryRes] = useState(false);
   const [amount, setAmount] = useState(0);
   const [name, setName] = useState("");
   const [userId, setUserId] = useState(0);
 
-  // const data = useQuery(getUserIdByName()).data;
-
-  const queryCall = () => {
-    console.log("query call"); // change
+    setWaitingForQueryRes(true);
+    setWaitingForQueryRes(false);
     setTimeoutAlive(false);
   };
 
