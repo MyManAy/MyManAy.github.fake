@@ -63,21 +63,13 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <ThemeProvider theme={colorTheme}>
-          <TextField
-            style={{
-              backgroundColor: "#F7D8B5",
-              border: "30px solid #FFF",
-              textAlign: "center",
-              margin: "20px",
-            }}
-            id="outlined-name"
-            label="Enter Name"
-            variant="outlined"
-            onChange={handleTextChange}
-            onKeyDown={handleKeyDown}
-          />
-        </ThemeProvider>
+        <div>
+          <NameInput
+            handleKeyDown={handleKeyDown}
+            handleTextChange={handleTextChange}
+          ></NameInput>
+          {!waitingForQueryRes || <CircularProgress />}
+        </div>
         <text style={{ verticalAlign: "top" }}>input user</text>
         <MoneyText amount={amount} />
         <MoneyButtons deposit={deposit} withdraw={withdraw}></MoneyButtons>
