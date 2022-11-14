@@ -45,7 +45,7 @@ function App() {
       if (timeoutAlive) {
         clearInterval(queryTimeout!);
       }
-      setQueryTimeout(setTimeout(queryCall, 1000));
+      setQueryTimeout(setTimeout(queryCall, 1000)); // flawed logic forces user to wait 1 second before EVERY call
       setTimeoutAlive(true);
 
       // smth
