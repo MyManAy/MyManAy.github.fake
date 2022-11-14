@@ -716,6 +716,14 @@ export type Uuid_Comparison_Exp = {
   _nin?: InputMaybe<Array<Scalars['uuid']>>;
 };
 
+export type UpdateMoneyByUserIdMutationVariables = Exact<{
+  id: Scalars['uuid'];
+  newAmount: Scalars['money'];
+}>;
+
+
+export type UpdateMoneyByUserIdMutation = { __typename?: 'mutation_root', update_Money?: { __typename?: 'Money_mutation_response', affected_rows: number } | null };
+
 export type GetUserIdByNameQueryVariables = Exact<{
   name: Scalars['String'];
 }>;
@@ -1125,6 +1133,13 @@ export type DirectiveResolvers<ContextType = any> = {
 };
 
 
+export const UpdateMoneyByUserIdDocument = gql`
+    mutation updateMoneyByUserId($id: uuid!, $newAmount: money!) {
+  update_Money(where: {userId: {_eq: $id}}, _set: {amount: $newAmount}) {
+    affected_rows
+  }
+}
+    `;
 export const GetUserIdByNameDocument = gql`
     query getUserIdByName($name: String!) {
   User(where: {name: {_eq: $name}}) {
@@ -1147,6 +1162,9 @@ const defaultWrapper: SdkFunctionWrapper = (action, _operationName, _operationTy
 
 export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = defaultWrapper) {
   return {
+    updateMoneyByUserId(variables: UpdateMoneyByUserIdMutationVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<UpdateMoneyByUserIdMutation> {
+      return withWrapper((wrappedRequestHeaders) => client.request<UpdateMoneyByUserIdMutation>(UpdateMoneyByUserIdDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'updateMoneyByUserId', 'mutation');
+    },
     getUserIdByName(variables: GetUserIdByNameQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<GetUserIdByNameQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<GetUserIdByNameQuery>(GetUserIdByNameDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'getUserIdByName', 'query');
     },
