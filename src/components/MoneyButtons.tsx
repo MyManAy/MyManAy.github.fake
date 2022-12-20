@@ -19,7 +19,7 @@ export default function App({ deposit, withdraw, update }: IAppProps) {
           color="primary"
         >
           <Button style={{ color: "green" }} onClick={deposit}>
-            <text style={{ fontWeight: "bolder" }}>Deposi</text>
+            <text style={{ fontWeight: "bolder" }}>Deposit</text>
           </Button>
 
           <Button style={{ color: "red" }} onClick={withdraw}>
