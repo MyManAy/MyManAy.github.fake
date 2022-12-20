@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Volunteering/static/css/main.ca57846c.css",
+    "main.js": "/Volunteering/static/js/main.879a41e1.js",
+    "static/js/787.ce600914.chunk.js": "/Volunteering/static/js/787.ce600914.chunk.js",
+    "index.html": "/Volunteering/index.html",
+    "main.ca57846c.css.map": "/Volunteering/static/css/main.ca57846c.css.map",
+    "main.879a41e1.js.map": "/Volunteering/static/js/main.879a41e1.js.map",
+    "787.ce600914.chunk.js.map": "/Volunteering/static/js/787.ce600914.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ca57846c.css",
+    "static/js/main.879a41e1.js"
+  ]
+}

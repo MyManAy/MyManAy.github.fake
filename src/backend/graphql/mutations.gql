@@ -1,5 +1,0 @@
-mutation updateMoneyByUserId($id: uuid!, $newAmount: money!) {
-  update_Money(where: { userId: { _eq: $id } }, _set: { amount: $newAmount }) {
-    affected_rows
-  }
-}
