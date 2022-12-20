@@ -23,7 +23,19 @@
     "typescript": "^4.8.4",
     "web-vitals": "^2.1.4"
   },
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+  "homepage": "https://MyManAy.github.io/Volunteering",
+=======
+  "homepage": "https://mymanay.github.io/Volunteering",
+>>>>>>> parent of b475c8a (Merge branch 'master' of https://github.com/MyManAy/MyManAy.github.io)
+=======
+  "homepage": "https://mymanay.github.io/Volunteering",
+>>>>>>> parent of b475c8a (Merge branch 'master' of https://github.com/MyManAy/MyManAy.github.io)
+=======
   "homepage": "https://MyManAy.github.io",
+>>>>>>> parent of 985b76f (changed homepage url)
   "scripts": {
     "start": "craco start",
     "build": "craco build",
